@@ -31,6 +31,8 @@ function DetailsScreen() {
     `;
   };
 
+  const widgetURL = 'https://webchatIntegration.dariode2.repl.co';
+  const projectid = 'YOUR-PROJECT-ID';
   const runFirst = `
     console.log('runFirst');
       // setTimeout(function() { 
@@ -47,7 +49,7 @@ function DetailsScreen() {
       <script type="application/javascript">
                 window.tiledeskSettings= 
                 {
-                    projectid: "62d534f09492e8001a885ec4",
+                    projectid: "`+projectid+`",
                     startHidden: false,
                     fullscreenMode: true,
                     hideHeaderCloseButton: true,
@@ -70,8 +72,8 @@ function DetailsScreen() {
   return (
     <WebView
     ref={(r) => (this.webref = r)}
-    //source={{ html: customHTML }}
-    source={{ uri: 'https://tiledesk.dariodepascalis.space/javascript/indexTiledesk.html' }}
+    source={{ html: customHTML }}
+    // source={{ uri: widgetURL }}
     domStorageEnabled
     startInLoadingState={false}
     javaScriptEnabled={true}
